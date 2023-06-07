@@ -1,0 +1,61 @@
+### Hi there 👋
+
+<!--
+**Akshatamanaganvi/Akshatamanaganvi** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+
+Here are some ideas to get you started:
+
+- 🔭 I’m currently working on ...
+- 🌱 I’m currently learning ...
+- 👯 I’m looking to collaborate on ...
+- 🤔 I’m looking for help with ...
+- 💬 Ask me about ...
+- 📫 How to reach me: ...
+- 😄 Pronouns: ...
+- ⚡ Fun fact: ...
+-->
+# Binary Search in python
+
+def binarySearch(a, x, low, high):
+
+    # Repeat until the pointers low and high meet each other
+
+    while low <= high:
+
+        mid = low + (high - low)//2
+
+        if a[mid] == x:
+
+            return mid
+
+        elif a[mid] < x:
+
+            low = mid + 1
+
+        else:
+
+            high = mid - 1
+
+    return -1
+
+a=[]
+
+n=int(input("Number of elements in array:"))
+
+for i in range(0,n):
+
+   l=int(input())
+
+   a.append(l)
+
+x=int(input("enter the element to searched"))  
+
+result = binarySearch(a, x, 0, len(a)-1)
+
+if result != -1:
+
+    print("Element is present at index " + str(result))
+
+else:
+
+    print("Not found")
